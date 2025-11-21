@@ -56,7 +56,7 @@ def run_quantum_demo(shots: int = 1) -> Tuple[str, int, int, dict]:
     """
     # As per docs: .emulator(...).stabilizer_sim().with_seed(...).run()
     # Selene is used under the hood by Guppy’s emulator. :contentReference[oaicite:0]{index=0}
-    emu = teleport_one_state.emulator(n_qubits=2).stabilizer_sim().with_seed(2)
+    emu = teleport_one_state.emulator(n_qubits=3).stabilizer_sim().with_seed(2)
     sim_result = emu.run()  # single shot is fine for demo
 
     shots_list = list(sim_result.results)
