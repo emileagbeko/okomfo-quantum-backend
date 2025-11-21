@@ -67,3 +67,11 @@ def optimize(payload: OptimizeRequest) -> OptimizeResponse:
         qaoa_iterations=qaoa_iterations,
         quantum_metadata=q_metadata,
     )
+
+if __name__ == "__main__":
+    import uvicorn
+    import os
+    
+    port = int(os.environ.get("PORT", 8080))
+    uvicorn.run(app, host="0.0.0.0", port=port)
+
